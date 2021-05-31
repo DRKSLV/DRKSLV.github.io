@@ -1,0 +1,495 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+.tiltCard {
+  margin: auto;
+  margin-top: 100px;
+  width: 200px;
+  height: 400px;
+  position: relative;
+  --mouseX: 0;
+  --mouseY: 0;
+  --tiltX: 0;
+  --tiltY: 0;
+}
+.tiltCard .hitbox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.tiltCard .renderedCard {
+  border-radius: 10px;
+  background-image: linear-gradient(35deg, #3125d6, #11aeec);
+  width: 100%;
+  height: 100%;
+  transition: all 100ms;
+  transform: perspective(400px) scale(1) rotate3d(0, 0, 0, 0deg);
+  filter: brightness(1);
+}
+.tiltCard .renderedCard img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 10px;
+}
+.tiltCard:hover .hitbox {
+  transform: scale(1.5);
+}
+.tiltCard:hover .renderedCard {
+  transform: perspective(400px) scale(1.5) rotate3d(var(--tiltBY, 0), var(--tiltBX, 0), 0, calc(30deg * var(--magnitude, 0)));
+  filter: brightness(var(--light, 1));
+  z-index: 200;
+}
+.tiltCard .debugRect {
+  display: none;
+  position: absolute;
+  top: var(--mouseY, 0);
+  left: var(--mouseX, 0);
+  background-color: red;
+  width: 5px;
+  height: 5px;
+  border-radius: 2.5px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #181a1b;
+  color: white;
+}
+
+:root {
+  font-family: "Noto Sans TC", sans-serif;
+  scrollbar-color: #535353 #181a1b;
+  scrollbar-width: auto;
+  background-color: #181a1b;
+}
+
+a, a:visited, a:hover {
+  color: inherit;
+}
+
+.header {
+  position: fixed;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #1a0825;
+  top: 0;
+  z-index: 100;
+}
+.header object {
+  align-self: center;
+}
+.header object.logo {
+  height: 35px;
+}
+
+.container {
+  margin-top: 60px;
+  width: 100%;
+  text-align: center;
+}
+
+ul {
+  text-align: left;
+  width: max-content;
+  margin: auto;
+}
+
+a, a:visited {
+  color: #ff00fe;
+}
+a:hover, a:visited:hover {
+  color: #c900c9;
+}
+
+.document {
+  margin: 0% 20%;
+  color: #bdbdbd;
+  line-height: 1.45;
+  padding: 0.25rem;
+}
+@media screen and (max-width: 600px) {
+  .document {
+    margin: 0% 1.5%;
+    overflow: hidden;
+  }
+}
+@media print {
+  .document *,
+.document *:before,
+.document *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  .document a,
+.document a:visited {
+    text-decoration: underline;
+  }
+  .document a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  .document abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .document a[href^="#"]:after,
+.document a[href^="javascript:"]:after {
+    content: "";
+  }
+  .document pre,
+.document blockquote {
+    border: 1px solid #bdbdbd;
+    page-break-inside: avoid;
+    overflow: hidden;
+  }
+  .document thead {
+    display: table-header-group;
+  }
+  .document tr,
+.document img {
+    page-break-inside: avoid;
+  }
+  .document img {
+    max-width: 100% !important;
+    width: 200px;
+  }
+  .document p,
+.document h2,
+.document h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  .document h2,
+.document h3 {
+    page-break-after: avoid;
+  }
+}
+
+.markdownModest {
+  /* LMAO */
+}
+.markdownModest .anchor, .markdownModest .anchor:visited {
+  opacity: 0.5;
+  text-decoration: none;
+  color: #50506f !important;
+}
+.markdownModest .anchor:hover, .markdownModest .anchor:visited:hover {
+  opacity: 1;
+}
+.markdownModest .embed {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  width: max-content;
+  background-color: #50506f;
+}
+.markdownModest .embed a, .markdownModest .embed a:visited {
+  text-decoration: none;
+  color: #bdbdbd;
+}
+.markdownModest .embed iframe {
+  display: block;
+  width: 300px;
+  border-radius: 10px;
+}
+.markdownModest pre,
+.markdownModest code {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+.markdownModest pre {
+  padding: 0.5rem;
+  line-height: 1.25;
+  overflow: hidden;
+  max-width: 100%;
+}
+.markdownModest a,
+.markdownModest a:visited {
+  color: #8181bd;
+}
+.markdownModest a:hover,
+.markdownModest a:focus,
+.markdownModest a:active {
+  filter: brightness(1.5);
+}
+.markdownModest .modest-no-decoration {
+  text-decoration: none;
+}
+.markdownModest body {
+  line-height: 1.85;
+}
+.markdownModest p,
+.markdownModest .modest-p {
+  font-size: 1em;
+  margin-bottom: 1.3rem;
+}
+.markdownModest h1,
+.markdownModest .modest-h1,
+.markdownModest h2,
+.markdownModest .modest-h2,
+.markdownModest h3,
+.markdownModest .modest-h3,
+.markdownModest h4,
+.markdownModest .modest-h4 {
+  margin: 1.414rem 0 0.5rem;
+  font-weight: inherit;
+  line-height: 1.42;
+}
+.markdownModest h1,
+.markdownModest .modest-h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+}
+.markdownModest h2,
+.markdownModest .modest-h2 {
+  font-size: 2.827em;
+}
+.markdownModest h3,
+.markdownModest .modest-h3 {
+  font-size: 1.999em;
+}
+.markdownModest h4,
+.markdownModest .modest-h4 {
+  font-size: 1.414em;
+}
+.markdownModest h5,
+.markdownModest .modest-h5 {
+  font-size: 1.121em;
+}
+.markdownModest h6,
+.markdownModest .modest-h6 {
+  font-size: 0.88em;
+}
+.markdownModest small,
+.markdownModest .modest-small {
+  font-size: 0.707em;
+}
+.markdownModest img,
+.markdownModest canvas,
+.markdownModest iframe,
+.markdownModest video,
+.markdownModest svg,
+.markdownModest select,
+.markdownModest textarea {
+  max-width: 100%;
+}
+.markdownModest img {
+  width: 200px;
+}
+.markdownModest h1,
+.markdownModest h2,
+.markdownModest h3 {
+  border-bottom: 2px solid #50506f;
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+.markdownModest h1,
+.markdownModest h2,
+.markdownModest h3,
+.markdownModest h4,
+.markdownModest h5,
+.markdownModest h6 {
+  border-top: 1em solid #fff0;
+  margin-top: 0;
+  color: #cecece;
+}
+.markdownModest hr {
+  color: #50506f;
+  border-color: #50506f;
+}
+.markdownModest blockquote {
+  border-left: 4px solid #50506f;
+  padding: 0.5rem;
+  margin: 5px 5px;
+}
+.markdownModest blockquote p {
+  margin: 5px 5px;
+}
+.markdownModest pre,
+.markdownModest code {
+  color: white;
+  background-color: #50506f;
+  padding: 0.5em;
+  border-radius: 10px;
+  line-height: unset;
+}
+.markdownModest table, .markdownModest thead, .markdownModest tbody, .markdownModest td, .markdownModest tr {
+  border: 3px solid #50506f;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.markdownModest strong {
+  font-weight: bold;
+  color: #cecece;
+}
+.markdownModest li::marker, .markdownModest ul::marker {
+  color: #8181bd;
+}
+
+.markdownLMAO {
+  /* LMAO */
+}
+.markdownLMAO .anchor, .markdownLMAO .anchor:visited {
+  opacity: 0.5;
+  text-decoration: none;
+  color: #50506f !important;
+}
+.markdownLMAO .anchor:hover, .markdownLMAO .anchor:visited:hover {
+  opacity: 1;
+}
+.markdownLMAO .embed {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  width: max-content;
+  background-color: #50506f;
+}
+.markdownLMAO .embed a, .markdownLMAO .embed a:visited {
+  text-decoration: none;
+  color: #bdbdbd;
+}
+.markdownLMAO .embed iframe {
+  display: block;
+  width: 300px;
+  border-radius: 10px;
+}
+.markdownLMAO pre,
+.markdownLMAO code {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+.markdownLMAO pre {
+  padding: 0.5rem;
+  line-height: 1.25;
+  overflow: hidden;
+  max-width: 100%;
+}
+.markdownLMAO a,
+.markdownLMAO a:visited {
+  color: #8181bd;
+}
+.markdownLMAO a:hover,
+.markdownLMAO a:focus,
+.markdownLMAO a:active {
+  filter: brightness(1.5);
+}
+.markdownLMAO .modest-no-decoration {
+  text-decoration: none;
+}
+.markdownLMAO body {
+  line-height: 1.85;
+}
+.markdownLMAO p,
+.markdownLMAO .modest-p {
+  font-size: 1em;
+  margin-bottom: 1.3rem;
+}
+.markdownLMAO h1,
+.markdownLMAO .modest-h1,
+.markdownLMAO h2,
+.markdownLMAO .modest-h2,
+.markdownLMAO h3,
+.markdownLMAO .modest-h3,
+.markdownLMAO h4,
+.markdownLMAO .modest-h4 {
+  margin: 1.414rem 0 0.5rem;
+  font-weight: inherit;
+  line-height: 1.42;
+}
+.markdownLMAO h1,
+.markdownLMAO .modest-h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+}
+.markdownLMAO h2,
+.markdownLMAO .modest-h2 {
+  font-size: 2.827em;
+}
+.markdownLMAO h3,
+.markdownLMAO .modest-h3 {
+  font-size: 1.999em;
+}
+.markdownLMAO h4,
+.markdownLMAO .modest-h4 {
+  font-size: 1.414em;
+}
+.markdownLMAO h5,
+.markdownLMAO .modest-h5 {
+  font-size: 1.121em;
+}
+.markdownLMAO h6,
+.markdownLMAO .modest-h6 {
+  font-size: 0.88em;
+}
+.markdownLMAO small,
+.markdownLMAO .modest-small {
+  font-size: 0.707em;
+}
+.markdownLMAO img,
+.markdownLMAO canvas,
+.markdownLMAO iframe,
+.markdownLMAO video,
+.markdownLMAO svg,
+.markdownLMAO select,
+.markdownLMAO textarea {
+  max-width: 100%;
+}
+.markdownLMAO img {
+  width: 200px;
+}
+.markdownLMAO h1,
+.markdownLMAO h2,
+.markdownLMAO h3 {
+  border-bottom: 2px solid #50506f;
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+.markdownLMAO h1,
+.markdownLMAO h2,
+.markdownLMAO h3,
+.markdownLMAO h4,
+.markdownLMAO h5,
+.markdownLMAO h6 {
+  border-top: 1em solid #fff0;
+  margin-top: 0;
+  color: #cecece;
+}
+.markdownLMAO hr {
+  color: #50506f;
+  border-color: #50506f;
+}
+.markdownLMAO blockquote {
+  border-left: 4px solid #50506f;
+  padding: 0.5rem;
+  margin: 5px 5px;
+}
+.markdownLMAO blockquote p {
+  margin: 5px 5px;
+}
+.markdownLMAO pre,
+.markdownLMAO code {
+  color: white;
+  background-color: #50506f;
+  padding: 0.5em;
+  border-radius: 10px;
+  line-height: unset;
+}
+.markdownLMAO table, .markdownLMAO thead, .markdownLMAO tbody, .markdownLMAO td, .markdownLMAO tr {
+  border: 3px solid #50506f;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.markdownLMAO strong {
+  font-weight: bold;
+  color: #cecece;
+}
+.markdownLMAO li::marker, .markdownLMAO ul::marker {
+  color: #8181bd;
+}
+
+/*# sourceMappingURL=index.css.map */
