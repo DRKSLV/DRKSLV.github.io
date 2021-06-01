@@ -106,6 +106,15 @@ a:hover, a:visited:hover {
   color: #c900c9;
 }
 
+span.evil {
+  color: #b80000;
+  font-weight: bold;
+}
+
+span.oh {
+  color: #a5a5a5;
+}
+
 .document {
   margin: 0% 20%;
   color: #bdbdbd;
