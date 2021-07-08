@@ -1,0 +1,307 @@
+{
+     "series": {},
+     "articles": {
+          "bruh": {
+               "url": "/bruh",
+               "template": "default",
+               "parserOptions": {},
+               "title": "Home ",
+               "description": "\n",
+               "fulltext": "",
+               "tags": [],
+               "sections": []
+          },
+          "index": {
+               "url": "/index",
+               "template": "default",
+               "parserOptions": {},
+               "title": "DRKSLV",
+               "description": "A list of all my Web Projects!",
+               "fulltext": "SITE UNDER CONSTRUCTION\nWhile i question my life choices, why dont you look at this gnome \nYk maybe hover your mouse over the card or smth haha\nMy things:\n-  Discussion: Forum made in Next.js/Postgres\n-  Docs:  Markdown Article/Blog/Documentation System Demo\n-  Satans Workshop: Become obsessed with Polygrams\n-  CEASAR cypher: Foil every attempt to intercept your messages!!\n-  Intelicom: (Very) old school project [NON-RESPONSIVE]\n-  Dragon Fractal: The Draconic fractal [ZOOM BROKEN]\n-  Hitler AI: Exclusive look into Hitlers Autocorrect [BAD UI]\n-  Tic-Tac-Toe: a friend of mine made this idk why i have it (oh i dont anymore lol)\n",
+               "tags": [],
+               "sections": [
+                    {
+                         "text": "SITE UNDER CONSTRUCTION",
+                         "anchor": "#site-under-construction",
+                         "lvl": 1,
+                         "sub": [
+                              {
+                                   "text": "My things:",
+                                   "anchor": "#my-things-",
+                                   "lvl": 3,
+                                   "sub": []
+                              }
+                         ]
+                    }
+               ]
+          }
+     },
+     "folders": {
+          "satansWorkshop": {
+               "url": "/satansWorkshop/",
+               "series": {},
+               "articles": {
+                    "index": {
+                         "url": "/satansWorkshop/index",
+                         "template": "default",
+                         "parserOptions": {},
+                         "title": "Satans Workshop",
+                         "description": "A tool that visualizes all possible regular Polygons and Polygrams. In the pursuit of Satanism of course.",
+                         "fulltext": "No Shape selected\n",
+                         "tags": [],
+                         "sections": []
+                    },
+                    "lmao": {
+                         "url": "/satansWorkshop/lmao",
+                         "template": "default",
+                         "parserOptions": {},
+                         "title": "OMINOUS DOCUMENT",
+                         "description": "\n",
+                         "fulltext": "",
+                         "tags": [],
+                         "sections": []
+                    }
+               },
+               "folders": {}
+          },
+          "docs": {
+               "url": "/docs/",
+               "series": {},
+               "articles": {
+                    "architecture": {
+                         "url": "/docs/architecture",
+                         "template": "listsidebar",
+                         "parserOptions": {},
+                         "title": "Project Skeleton",
+                         "description": "Folder Structure\n- /public: as-is assets and compiled output\n- /src: contains content that needs to be converted or compiled\n- /style: sass markup that is compiled to /public/style\n[...]",
+                         "fulltext": "Folder Structure\n- /public: as-is assets and compiled output\n- /src: contains content that needs to be converted or compiled\n- /style: sass markup that is compiled to /public/style\n- /pages: contains pug/html/markdown that is compiled to public, preserving the directory structure - like classic html path shit\n- /md_templates: templates that are used by the markdown parser\nMarkdown File Specification\nTemplate\n- A pug template that can be used by markdown files in /pages \n- The compiled content is passed in the converted local\n- Make sure to use a ! to tell pug to include the raw content\n- other passed locals:\n- url: url this file will have\n- articles: article cache\n- vars: Custom Object defined via markdown file header\n- docInfo: DocInfo (obtained by HTML scraper)\n- functions isSubpath and getFolder for working with the article cache\nMarkdown File\n- It’s just markdown except:\n- Links may be converted to embeds\n- Anchor tags may be included\n- hopefully custom styles at some point\n- Can include JSON metadata in a md comment on the first line (“Header”)\n- [//]: # '{\"template\": \"\"}' \n- template: String – specifies the name of the pug template used (or default.pug)\n- tags: String[] – list of tags used to group of documents\n- vars: Object – values will be inserted into pug locals\n- parserOptions: Object - may in future set the parser options\nDatatypes\ndocument info\n- title, description, fulltext\n- sections: Array of section objects\n- text: Headline of this section\n- anchor: Tag, used to skip through the page\n- lvl: heading level\n- sub: Array of subsections  \narticle cache\n- root is a folder object for /pages\n- Folder Object:\n- url: Url of this folder\n- articles: Array of article objects\n- url: URl of this article\n- template, vars, parserOpts\n- includes all properties from DocInfo\n- folders: Array of folder objects\n- series: bad idea object that’s always empty\n",
+                         "tags": [],
+                         "sections": [
+                              {
+                                   "text": "Project Skeleton",
+                                   "anchor": "#project-skeleton",
+                                   "lvl": 1,
+                                   "sub": [
+                                        {
+                                             "text": "Folder Structure",
+                                             "anchor": "#folder-structure",
+                                             "lvl": 2,
+                                             "sub": []
+                                        },
+                                        {
+                                             "text": "Markdown File Specification",
+                                             "anchor": "#markdown-file-specification",
+                                             "lvl": 2,
+                                             "sub": [
+                                                  {
+                                                       "text": "Template",
+                                                       "anchor": "#template",
+                                                       "lvl": 3,
+                                                       "sub": []
+                                                  },
+                                                  {
+                                                       "text": "Markdown File",
+                                                       "anchor": "#markdown-file",
+                                                       "lvl": 3,
+                                                       "sub": []
+                                                  }
+                                             ]
+                                        },
+                                        {
+                                             "text": "Datatypes",
+                                             "anchor": "#datatypes",
+                                             "lvl": 2,
+                                             "sub": [
+                                                  {
+                                                       "text": "document info",
+                                                       "anchor": "#document-info",
+                                                       "lvl": 3,
+                                                       "sub": []
+                                                  },
+                                                  {
+                                                       "text": "article cache",
+                                                       "anchor": "#article-cache",
+                                                       "lvl": 3,
+                                                       "sub": []
+                                                  }
+                                             ]
+                                        }
+                                   ]
+                              }
+                         ]
+                    },
+                    "index": {
+                         "url": "/docs/index",
+                         "template": "listsidebar",
+                         "parserOptions": {},
+                         "title": "DOCS",
+                         "description": "DRKSLV Docs host Information on my Web Projects. [WORK IN PROGRESS]I’m most proud of how well the sidebar works atm, look how sexy it is.The Documents themselves don’t really have that visual hierarchy to them, and the magenta links are a little too fabulous.I also need to add custom styles to the markdown parser, add a tag make the text shake violently or flash red etc yk.\nGeneration\nThese “Documentation” Pages are statically generated from Markdown and Pug (Html templating) Files.To build the site, generate.js is run, which copies html and compiles pug files located in /src/pages to /public.The directory structure is preserved, allowing easy url definitions through folder names.\n\n[...]",
+                         "fulltext": "DRKSLV Docs host Information on my Web Projects. [WORK IN PROGRESS]I’m most proud of how well the sidebar works atm, look how sexy it is.The Documents themselves don’t really have that visual hierarchy to them, and the magenta links are a little too fabulous.I also need to add custom styles to the markdown parser, add a tag make the text shake violently or flash red etc yk.\nGeneration\nThese “Documentation” Pages are statically generated from Markdown and Pug (Html templating) Files.To build the site, generate.js is run, which copies html and compiles pug files located in /src/pages to /public.The directory structure is preserved, allowing easy url definitions through folder names.\n\nSass files in /src/style are also compiled to /public/assets/style;generate.js won’t delete files already located in public, allowing you to manually place files into the /assets folder for example(html files in /public may be overridden by files in /src/pages though, and when the filesystem watcher detects deletion of a /pages file, the corresponding file in /public will be deleted)\nMarkdown\nMarkdown files obviously require a template to define design and control elements such as sidebars, headers, footers, etc.Thats why you can place pug files into /src/md_templates, and include a json object in the first line of a markdown file:\n[//]: # '{\"template\": \"listsidebar\", \"vars\": {\"scope\": \"docs\"} }' \nThis json object can define the template, variables to be passed into it (in this case, the root directory for the sidebar to your left:) )and other Information outlined here\nArticle/Blog System, future Plans\n“Well, that’s neat and all”, i hear you say, “but how does this qualify as a blog system”???And you’d be right. There are a few features i’d want for a simple blogging tool:\n- Search through Articles\n- Suggestion of Articles\n- Tree View for Articles ✅\n- Display latest Articles\nAs the foundations for all of these features, an index of all articles or pages needs to be generated.After the compilation step, the generated HTML is scraped for a title, a description, a tree of h1, h2, h3 sections and the full text without formatting for search.All of this information for every page is saved as a json file, that you can view here\nThis object is passed to every pug file and the markdown templates, and can then be displayed as the tree view you can see to your left.I haven’t implemented search, suggestions and a system to implement timestamps yet, but from this foundation it shouldn’t take me that much more time.\narticleCache.json is public, so that a browser can be scripted to do the search-stuff on the client side.This is important for me, since the site lives on Github pages. Maybe if i get my own server, i’ll do secret shit that will require a way to be excluded from the public search index.\nI will, when i’m done, probably create an electron.js app for a more user-friendly process to add articles,regenerate the site and push both the sourcefiles and the the output to their respective git repos.(maybe with an option to post the link to twitter)\nI’m kinda hyped this will be great\n",
+                         "tags": [],
+                         "sections": [
+                              {
+                                   "text": "DOCS",
+                                   "anchor": "#docs",
+                                   "lvl": 1,
+                                   "sub": [
+                                        {
+                                             "text": "Generation",
+                                             "anchor": "#generation",
+                                             "lvl": 2,
+                                             "sub": [
+                                                  {
+                                                       "text": "Markdown",
+                                                       "anchor": "#markdown",
+                                                       "lvl": 3,
+                                                       "sub": []
+                                                  },
+                                                  {
+                                                       "text": "Article/Blog System, future Plans",
+                                                       "anchor": "#article-blog-system-future-plans",
+                                                       "lvl": 3,
+                                                       "sub": []
+                                                  }
+                                             ]
+                                        }
+                                   ]
+                              }
+                         ]
+                    }
+               },
+               "folders": {
+                    "hahahasansundertale": {
+                         "url": "/docs/hahahasansundertale/",
+                         "series": {},
+                         "articles": {
+                              "megalovania": {
+                                   "url": "/docs/hahahasansundertale/megalovania",
+                                   "template": "listsidebar",
+                                   "parserOptions": {},
+                                   "title": "Meglovania",
+                                   "description": "Sans Undertale\n        \n\n\n",
+                                   "fulltext": "Sans Undertale\n        \n\n",
+                                   "tags": [],
+                                   "sections": [
+                                        {
+                                             "text": "Meglovania",
+                                             "anchor": "#meglovania",
+                                             "lvl": 1,
+                                             "sub": []
+                                        }
+                                   ]
+                              }
+                         },
+                         "folders": {}
+                    },
+                    "lmaobro": {
+                         "url": "/docs/lmaobro/",
+                         "series": {},
+                         "articles": {
+                              "ddd": {
+                                   "url": "/docs/lmaobro/ddd",
+                                   "template": "listsidebar",
+                                   "parserOptions": {},
+                                   "title": "OMINOUS DOCUMENT",
+                                   "description": "\n",
+                                   "fulltext": "",
+                                   "tags": [],
+                                   "sections": []
+                              },
+                              "eee": {
+                                   "url": "/docs/lmaobro/eee",
+                                   "template": "listsidebar",
+                                   "parserOptions": {},
+                                   "title": "OMINOUS DOCUMENT",
+                                   "description": "\n        \n\n\n",
+                                   "fulltext": "\n        \n\n",
+                                   "tags": [],
+                                   "sections": []
+                              },
+                              "index": {
+                                   "url": "/docs/lmaobro/index",
+                                   "template": "listsidebar",
+                                   "parserOptions": {},
+                                   "title": "HHAHAHAHAHA DU GAGO",
+                                   "description": "sorry\nich code grad zu tj beastboy liedern\n\n",
+                                   "fulltext": "sorry\nich code grad zu tj beastboy liedern\n",
+                                   "tags": [],
+                                   "sections": [
+                                        {
+                                             "text": "HHAHAHAHAHA DU GAGO",
+                                             "anchor": "#hhahahahaha-du-gago",
+                                             "lvl": 1,
+                                             "sub": [
+                                                  {
+                                                       "text": "sorry",
+                                                       "anchor": "#sorry",
+                                                       "lvl": 2,
+                                                       "sub": []
+                                                  }
+                                             ]
+                                        },
+                                        {
+                                             "text": "ich code grad zu tj beastboy liedern",
+                                             "anchor": "#ich-code-grad-zu-tj-beastboy-liedern",
+                                             "lvl": 1,
+                                             "sub": []
+                                        }
+                                   ]
+                              }
+                         },
+                         "folders": {
+                              "eeeaa": {
+                                   "url": "/docs/lmaobro/eeeaa/",
+                                   "series": {},
+                                   "articles": {
+                                        "no": {
+                                             "url": "/docs/lmaobro/eeeaa/no",
+                                             "template": "listsidebar",
+                                             "parserOptions": {},
+                                             "title": "NO",
+                                             "description": "bruh\nbrah\nsick\nincoming_call\n[...]",
+                                             "fulltext": "bruh\nbrah\nsick\nincoming_call\nich ruf bei euch zu hause an und frag ist der peinliche gago hier\n",
+                                             "tags": [],
+                                             "sections": [
+                                                  {
+                                                       "text": "NO",
+                                                       "anchor": "#no",
+                                                       "lvl": 1,
+                                                       "sub": [
+                                                            {
+                                                                 "text": "bruh",
+                                                                 "anchor": "#bruh",
+                                                                 "lvl": 2,
+                                                                 "sub": []
+                                                            },
+                                                            {
+                                                                 "text": "brah",
+                                                                 "anchor": "#brah",
+                                                                 "lvl": 2,
+                                                                 "sub": []
+                                                            }
+                                                       ]
+                                                  },
+                                                  {
+                                                       "text": "sick",
+                                                       "anchor": "#sick",
+                                                       "lvl": 1,
+                                                       "sub": [
+                                                            {
+                                                                 "text": "incoming_call",
+                                                                 "anchor": "#incoming_call",
+                                                                 "lvl": 2,
+                                                                 "sub": []
+                                                            }
+                                                       ]
+                                                  }
+                                             ]
+                                        }
+                                   },
+                                   "folders": {}
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}

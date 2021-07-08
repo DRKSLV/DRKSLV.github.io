@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap");
+.collapseList, .articleList {
+  padding: 0.5em;
+}
+.collapseList ul, .articleList ul {
+  overflow: hidden;
+  padding-left: 1.5em;
+  padding-top: 0;
+}
+.collapseList li, .articleList li {
+  padding: 0.25em 0;
+}
+.collapseList li[open=true], .articleList li[open=true] {
+  list-style: url("/assets/minus-square.svg") outside;
+}
+.collapseList li[open=true].animOn ul, .articleList li[open=true].animOn ul {
+  display: block;
+  animation: expand 300ms forwards linear;
+}
+.collapseList li[open=false], .articleList li[open=false] {
+  list-style: url("/assets/plus-square.svg") outside;
+}
+.collapseList li[open=false].animOn ul, .articleList li[open=false].animOn ul {
+  animation: collapse 300ms forwards linear;
+}
+.collapseList li[open=nochild], .articleList li[open=nochild] {
+  list-style: none outside;
+}
+
+@keyframes expand {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: var(--height, 500px);
+  }
+}
+@keyframes collapse {
+  0% {
+    max-height: var(--height, 500px);
+  }
+  100% {
+    max-height: 0;
+    display: none;
+  }
+}
+.articleList {
+  grid-area: nav;
+  overflow-y: scroll;
+  color: #b3b3b3;
+  font-style: italic;
+  background-color: #181a1b;
+  scrollbar-width: thin;
+}
+.articleList a, .articleList a:visited {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-style: normal;
+}
+.articleList a:hover, .articleList a:focus, .articleList a:visited:hover, .articleList a:visited:focus {
+  color: transparent;
+}
+.articleList ul.outline {
+  list-style: none;
+  background-color: #303337;
+  padding-bottom: 0.5em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  max-height: none;
+  animation: none;
+}
+.articleList ul.outline li {
+  padding: 0.125em 0;
+}
+.articleList ul.outline ul {
+  padding-left: 0.5em;
+}
+.articleList b#currentArticle {
+  width: 100%;
+  padding-top: 0.5em;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  background-color: #43494d;
+  display: inline-block;
+}
+.articleList b {
+  color: #eee;
+}
+.articleList b a, .articleList b a:visited {
+  color: #eee;
+}
+
+#mobileSidebarButton {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  #mobileSidebarButton {
+    display: initial;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    color: #b3b3b3;
+    margin: 5px;
+  }
+  #mobileSidebarButton[open=true] .list {
+    display: none;
+  }
+  #mobileSidebarButton[open=true] .close {
+    display: initial;
+  }
+  #mobileSidebarButton[open=false] .list {
+    display: initial;
+  }
+  #mobileSidebarButton[open=false] .close {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar.open {
+    display: initial;
+    position: absolute;
+    height: 100vh;
+    width: 90vw;
+    z-index: 10;
+    padding-top: 40px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+:root {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+body {
+  grid-template-columns: 350px 100fr;
+  grid-template-rows: auto;
+  grid-template-areas: "nav body";
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #181a1b;
+  color: #b3b3b3;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  position: fixed;
+}
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+    grid-template-areas: "body body";
+  }
+}
+
+.gradientText, nav p span, a:hover, a:focus, a:visited:hover, a:visited:focus {
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(135deg, #ff00fe, #00f3ff);
+}
+
+a, a:visited {
+  color: magenta;
+}
+.content {
+  background-color: #303337;
+  color: #b3b3b3;
+  grid-area: body;
+  padding-left: 2em;
+  overflow-y: scroll;
+}
+@media screen and (max-width: 600px) {
+  .content {
+    padding-top: 40px;
+  }
+}
+
+nav svg {
+  display: block;
+  margin: auto;
+  --base-color: #c800d9;
+  --inner-color: #14c7ff;
+  --outer-color: #a401ff;
+}
+nav p {
+  font-size: 2em;
+  margin: auto;
+  text-align: center;
+}
+nav p span {
+  padding-right: 0.25em;
+}
+
+/*# sourceMappingURL=md.css.map */

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created using Krita: http://krita.org -->
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="85" d="m100 100 L400 400"/>
+    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="85" d="m100 400 L400 100"/>
+</svg>

@@ -1,0 +1,46 @@
+#mobileSidebarButton {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  #mobileSidebarButton {
+    display: initial;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    color: #b3b3b3;
+    margin: 5px;
+  }
+  #mobileSidebarButton[open=true] .list {
+    display: none;
+  }
+  #mobileSidebarButton[open=true] .close {
+    display: initial;
+  }
+  #mobileSidebarButton[open=false] .list {
+    display: initial;
+  }
+  #mobileSidebarButton[open=false] .close {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar.open {
+    display: initial;
+    position: absolute;
+    height: 100vh;
+    width: 90vw;
+    z-index: 10;
+    padding-top: 40px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=mobileSidebar.css.map */

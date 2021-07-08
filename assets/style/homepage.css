@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+}
+
+.banner {
+  height: 600px;
+  max-height: 600px;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+.banner svg {
+  display: block;
+  margin: auto;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner svg g:first-child path {
+  transform-origin: 50% 50%;
+  animation: rotate 24s linear infinite;
+  animation-direction: reverse;
+}
+.banner svg g:last-child path {
+  transform-origin: 50% 50%;
+  animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=homepage.css.map */

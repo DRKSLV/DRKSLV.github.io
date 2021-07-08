@@ -1,0 +1,92 @@
+.collapseList, .articleList {
+  padding: 0.5em;
+}
+.collapseList ul, .articleList ul {
+  overflow: hidden;
+  padding-left: 1.5em;
+  padding-top: 0;
+}
+.collapseList li, .articleList li {
+  padding: 0.25em 0;
+}
+.collapseList li[open=true], .articleList li[open=true] {
+  list-style: url("/assets/minus-square.svg") outside;
+}
+.collapseList li[open=true].animOn ul, .articleList li[open=true].animOn ul {
+  display: block;
+  animation: expand 300ms forwards linear;
+}
+.collapseList li[open=false], .articleList li[open=false] {
+  list-style: url("/assets/plus-square.svg") outside;
+}
+.collapseList li[open=false].animOn ul, .articleList li[open=false].animOn ul {
+  animation: collapse 300ms forwards linear;
+}
+.collapseList li[open=nochild], .articleList li[open=nochild] {
+  list-style: none outside;
+}
+
+@keyframes expand {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: var(--height, 500px);
+  }
+}
+@keyframes collapse {
+  0% {
+    max-height: var(--height, 500px);
+  }
+  100% {
+    max-height: 0;
+    display: none;
+  }
+}
+.articleList {
+  grid-area: nav;
+  overflow-y: scroll;
+  color: #b3b3b3;
+  font-style: italic;
+  background-color: #181a1b;
+  scrollbar-width: thin;
+}
+.articleList a, .articleList a:visited {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-style: normal;
+}
+.articleList a:hover, .articleList a:focus, .articleList a:visited:hover, .articleList a:visited:focus {
+  color: transparent;
+}
+.articleList ul.outline {
+  list-style: none;
+  background-color: #303337;
+  padding-bottom: 0.5em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  max-height: none;
+  animation: none;
+}
+.articleList ul.outline li {
+  padding: 0.125em 0;
+}
+.articleList ul.outline ul {
+  padding-left: 0.5em;
+}
+.articleList b#currentArticle {
+  width: 100%;
+  padding-top: 0.5em;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  background-color: #43494d;
+  display: inline-block;
+}
+.articleList b {
+  color: #eee;
+}
+.articleList b a, .articleList b a:visited {
+  color: #eee;
+}
+
+/*# sourceMappingURL=collapseList.css.map */

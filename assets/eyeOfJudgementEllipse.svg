@@ -14,7 +14,7 @@
         <radialGradient id="cursed" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
             <stop offset="0%" style="stop-color:var(--inner-color, #00f3ff);
             stop-opacity:1" />
-            <stop offset="100%" style="stop-color:var(--base-color, #ff00fe);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:var(--outer-color, #ff00fe);stop-opacity:1" />
         </radialGradient>
     </defs>
 
