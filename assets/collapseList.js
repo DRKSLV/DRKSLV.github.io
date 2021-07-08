@@ -50,15 +50,14 @@ function setCollapse(target, open) {
 // SIDEBAR
 function initSidebar() {
     const params = new URLSearchParams(window.location.search);
-
+    var sidebarOpen = params.get("sidebarOpen")==="true";
     
-    var sidebarOpen = false;
-    /*
     if (!sidebarOpen)
+        closeSidebar();
     else
         openSidebar();
-        */
-        closeSidebar();
+        
+        
     
 
     document.getElementById("mobileSidebarButton").addEventListener("click", (evt) => {

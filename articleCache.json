@@ -37,33 +37,6 @@
           }
      },
      "folders": {
-          "satansWorkshop": {
-               "url": "/satansWorkshop/",
-               "series": {},
-               "articles": {
-                    "index": {
-                         "url": "/satansWorkshop/index",
-                         "template": "default",
-                         "parserOptions": {},
-                         "title": "Satans Workshop",
-                         "description": "A tool that visualizes all possible regular Polygons and Polygrams. In the pursuit of Satanism of course.",
-                         "fulltext": "No Shape selected\n",
-                         "tags": [],
-                         "sections": []
-                    },
-                    "lmao": {
-                         "url": "/satansWorkshop/lmao",
-                         "template": "default",
-                         "parserOptions": {},
-                         "title": "OMINOUS DOCUMENT",
-                         "description": "\n",
-                         "fulltext": "",
-                         "tags": [],
-                         "sections": []
-                    }
-               },
-               "folders": {}
-          },
           "docs": {
                "url": "/docs/",
                "series": {},
@@ -169,30 +142,6 @@
                     }
                },
                "folders": {
-                    "hahahasansundertale": {
-                         "url": "/docs/hahahasansundertale/",
-                         "series": {},
-                         "articles": {
-                              "megalovania": {
-                                   "url": "/docs/hahahasansundertale/megalovania",
-                                   "template": "listsidebar",
-                                   "parserOptions": {},
-                                   "title": "Meglovania",
-                                   "description": "Sans Undertale\n        \n\n\n",
-                                   "fulltext": "Sans Undertale\n        \n\n",
-                                   "tags": [],
-                                   "sections": [
-                                        {
-                                             "text": "Meglovania",
-                                             "anchor": "#meglovania",
-                                             "lvl": 1,
-                                             "sub": []
-                                        }
-                                   ]
-                              }
-                         },
-                         "folders": {}
-                    },
                     "lmaobro": {
                          "url": "/docs/lmaobro/",
                          "series": {},
@@ -300,8 +249,59 @@
                                    "folders": {}
                               }
                          }
+                    },
+                    "hahahasansundertale": {
+                         "url": "/docs/hahahasansundertale/",
+                         "series": {},
+                         "articles": {
+                              "megalovania": {
+                                   "url": "/docs/hahahasansundertale/megalovania",
+                                   "template": "listsidebar",
+                                   "parserOptions": {},
+                                   "title": "Meglovania",
+                                   "description": "Sans Undertale\n        \n\n\n",
+                                   "fulltext": "Sans Undertale\n        \n\n",
+                                   "tags": [],
+                                   "sections": [
+                                        {
+                                             "text": "Meglovania",
+                                             "anchor": "#meglovania",
+                                             "lvl": 1,
+                                             "sub": []
+                                        }
+                                   ]
+                              }
+                         },
+                         "folders": {}
                     }
                }
+          },
+          "satansWorkshop": {
+               "url": "/satansWorkshop/",
+               "series": {},
+               "articles": {
+                    "index": {
+                         "url": "/satansWorkshop/index",
+                         "template": "default",
+                         "parserOptions": {},
+                         "title": "Satans Workshop",
+                         "description": "A tool that visualizes all possible regular Polygons and Polygrams. In the pursuit of Satanism of course.",
+                         "fulltext": "No Shape selected\n",
+                         "tags": [],
+                         "sections": []
+                    },
+                    "lmao": {
+                         "url": "/satansWorkshop/lmao",
+                         "template": "default",
+                         "parserOptions": {},
+                         "title": "OMINOUS DOCUMENT",
+                         "description": "\n",
+                         "fulltext": "",
+                         "tags": [],
+                         "sections": []
+                    }
+               },
+               "folders": {}
           }
      }
 }
