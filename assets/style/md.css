@@ -168,19 +168,73 @@ body {
 }
 
 a, a:visited {
-  color: magenta;
+  color: #fa50ff;
+  text-decoration: none;
 }
 .content {
-  background-color: #303337;
+  background-color: #292b2f;
   color: #b3b3b3;
   grid-area: body;
-  padding-left: 2em;
   overflow-y: scroll;
 }
 @media screen and (max-width: 600px) {
   .content {
     padding-top: 40px;
   }
+  .content .article, .content .header, .content .aboutAuthor {
+    padding-left: 1em !important;
+  }
+}
+.content .article {
+  padding: 1em;
+  padding-left: 2em;
+  background-color: #303337;
+}
+.content .header {
+  top: 0;
+  padding: 2em;
+  padding-bottom: 0.5em;
+  background-color: #292b2f;
+}
+.content .header .title {
+  margin: 0;
+}
+.content .aboutAuthor {
+  padding-left: 2em;
+  background-color: #292b2f;
+  margin-bottom: 1em;
+  max-width: 100%;
+}
+.content .aboutAuthor h1, .content .aboutAuthor h2, .content .aboutAuthor h3 {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+.content .aboutAuthor .cont {
+  background-color: #181A1B;
+  padding: 1em;
+  border-radius: 1em;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.content .aboutAuthor .cont img {
+  clip-path: circle(50%);
+  width: 100px;
+  height: 100px;
+}
+@media screen and (max-width: 600px) {
+  .content .aboutAuthor .cont img {
+    width: 60px;
+    height: 60px;
+  }
+}
+.content .aboutAuthor .cont .txt {
+  margin-left: 0.5em;
+}
+.content .aboutAuthor .cont .txt p {
+  white-space: pre-wrap;
 }
 
 nav svg {

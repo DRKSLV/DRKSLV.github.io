@@ -33,13 +33,7 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
     <ellipse cx="104.7" cy="52.92" rx="37.44" ry="37.44" fill="url(#cursed)" fill-rule="evenodd" stroke="var(--base-color, #ff00fe)" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="0"/>
 </svg>
 
-<!--#ff00fe color--></a><p><span>DRKSLV</span>Docs</p><hr/><ul class="root"><li open="nochild">1. <a href="/docs/architecture?sidebarOpen=true">Project Skeleton</a></li><li open="true"><b id="currentArticle">2. <a href="/docs/?sidebarOpen=true">DOCS</a></b><ul class="outline"><li open="nochild"><ul><li open="nochild"><a href="?sidebarOpen=false#generation"> Generation</a><ul><li open="nochild"><a href="?sidebarOpen=false#markdown"> Markdown</a><ul></ul></li><li open="nochild"><a href="?sidebarOpen=false#article-blog-system-future-plans"> Article/Blog System, future Plans</a><ul></ul></li></ul></li></ul></li></ul></li><li open="false">3. hahahasansundertale<ul><li open="nochild">3.1. <a href="/docs/hahahasansundertale/megalovania?sidebarOpen=true">Meglovania</a></li></ul></li><li open="false">4. <a href="/docs/lmaobro/?sidebarOpen=true">HHAHAHAHAHA DU GAGO</a><ul><li open="nochild">4.1. <a href="/docs/lmaobro/ddd?sidebarOpen=true">OMINOUS DOCUMENT</a></li><li open="nochild">4.2. <a href="/docs/lmaobro/eee?sidebarOpen=true">OMINOUS DOCUMENT</a></li><li open="false">4.3. eeeaa<ul><li open="nochild">4.3.1. <a href="/docs/lmaobro/eeeaa/no?sidebarOpen=true">NO</a></li></ul></li></ul></li></ul></nav><div class="content"> 
-    <h1 id="docs">
-    DOCS
-    <a class="anchor" href="#docs">
-        <span class="header-link">#</span>
-    </a>
-    </h1><p>DRKSLV Docs host Information on my Web Projects. [WORK IN PROGRESS]<br>I’m most proud of how well the sidebar works atm, look how sexy it is.<br>The Documents themselves don’t really have that visual hierarchy to them, and the magenta links are a <em>little</em> too <em>fabulous</em>.<br>I also need to add custom styles to the markdown parser, add a tag make the text shake violently or flash red etc yk.</p>
+<!--#ff00fe color--></a><p><span>DRKSLV</span>Docs</p><hr/><ul class="root"><li open="nochild">1. <a href="/docs/architecture?sidebarOpen=true">Project Skeleton</a></li><li open="true"><b id="currentArticle">2. <a href="/docs/?sidebarOpen=true">DOCS</a></b><ul class="outline"><li open="nochild"><ul><li open="nochild"><a href="?sidebarOpen=false#generation"> Generation</a><ul><li open="nochild"><a href="?sidebarOpen=false#markdown"> Markdown</a><ul></ul></li><li open="nochild"><a href="?sidebarOpen=false#article-blog-system-future-plans"> Article/Blog System, future Plans</a><ul></ul></li></ul></li></ul></li></ul></li><li open="nochild">3. <a href="/docs/todo?sidebarOpen=true">Project TODO</a></li><li open="false">4. hahahasansundertale<ul><li open="nochild">4.1. <a href="/docs/hahahasansundertale/megalovania?sidebarOpen=true">Meglovania</a></li></ul></li><li open="false">5. <a href="/docs/lmaobro/?sidebarOpen=true">HHAHAHAHAHA DU GAGO</a><ul><li open="nochild">5.1. <a href="/docs/lmaobro/ddd?sidebarOpen=true">OMINOUS DOCUMENT</a></li><li open="nochild">5.2. <a href="/docs/lmaobro/eee?sidebarOpen=true">OMINOUS DOCUMENT</a></li><li open="false">5.3. eeeaa<ul><li open="nochild">5.3.1. <a href="/docs/lmaobro/eeeaa/no?sidebarOpen=true">NO</a></li></ul></li></ul></li></ul></nav><div class="content"> <div class="header"><h1 class="title">DOCS</h1><sub class="author">published by <a href="#__about_the_author">Konrad</a></sub></div><div class="article"><head></head><body><p>DRKSLV Docs host Information on my Web Projects. [WORK IN PROGRESS]<br>I’m most proud of how well the sidebar works atm, look how sexy it is.<br>The Documents themselves don’t really have that visual hierarchy to them, and the magenta links are a <em>little</em> too <em>fabulous</em>.<br>I also need to add custom styles to the markdown parser, add a tag make the text shake violently or flash red etc yk.</p>
 
     <h2 id="generation">
     Generation
@@ -56,7 +50,7 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
         <span class="header-link">#</span>
     </a>
     </h3><p>Markdown files obviously require a template to define design and control elements such as sidebars, headers, footers, etc.<br>Thats why you can place pug files into <code>/src/md_templates</code>, and include a json object in the first line of a markdown file:</p>
-<p><code>[//]: # &#39;{&quot;template&quot;: &quot;listsidebar&quot;, &quot;vars&quot;: {&quot;scope&quot;: &quot;docs&quot;} }&#39; </code></p>
+<p><code>[//]: # '{"template": "listsidebar", "vars": {"scope": "docs"} }' </code></p>
 <p>This json object can define the template, variables to be passed into it (in this case, the root directory for the sidebar to your left:) )<br>and other Information outlined <a href="docs/architecture.html">here</a></p>
 
     <h3 id="article-blog-system-future-plans">
@@ -76,4 +70,7 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
 <p><code>articleCache.json</code> is public, so that a browser can be scripted to do the search-stuff on the client side.<br>This is important for me, since the site lives on Github pages. Maybe if i get my own server, i’ll do secret shit that will require a way to be excluded from the public search index.</p>
 <p>I will, when i’m done, probably create an electron.js app for a more user-friendly process to add articles,<br>regenerate the site and push both the sourcefiles and the the output to their respective git repos.<br>(maybe with an option to post the link to twitter)</p>
 <p>I’m kinda hyped this will be great</p>
-</div></body></html>
+</body></div><div class="aboutAuthor" id="__about_the_author"><h1>About me </h1><div class="cont"> <img src="/assets/avatars/cursedMan.jpg"/><div class="txt"><h2>Konrad</h2><p>Euer charismatischer Gastgeber hier auf Konrad Webseite.
+Ich bin grad wie komisch, oder?
+Idk hab das schleichende gefühl dass ich cringe bin...
+Deswegen hab ich jetzt eine Webseite :)</p></div></div></div></div></body></html>

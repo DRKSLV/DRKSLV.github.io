@@ -33,13 +33,7 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
     <ellipse cx="104.7" cy="52.92" rx="37.44" ry="37.44" fill="url(#cursed)" fill-rule="evenodd" stroke="var(--base-color, #ff00fe)" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="0"/>
 </svg>
 
-<!--#ff00fe color--></a><p><span>DRKSLV</span>Docs</p><hr/><ul class="root"><li open="true"><b id="currentArticle">1. <a href="/docs/architecture?sidebarOpen=true">Project Skeleton</a></b><ul class="outline"><li open="nochild"><ul><li open="nochild"><a href="?sidebarOpen=false#folder-structure"> Folder Structure</a><ul></ul></li><li open="nochild"><a href="?sidebarOpen=false#markdown-file-specification"> Markdown File Specification</a><ul><li open="nochild"><a href="?sidebarOpen=false#template"> Template</a><ul></ul></li><li open="nochild"><a href="?sidebarOpen=false#markdown-file"> Markdown File</a><ul></ul></li></ul></li><li open="nochild"><a href="?sidebarOpen=false#datatypes"> Datatypes</a><ul><li open="nochild"><a href="?sidebarOpen=false#document-info"> document info</a><ul></ul></li><li open="nochild"><a href="?sidebarOpen=false#article-cache"> article cache</a><ul></ul></li></ul></li></ul></li></ul></li><li open="nochild">2. <a href="/docs/?sidebarOpen=true">DOCS</a></li><li open="false">3. hahahasansundertale<ul><li open="nochild">3.1. <a href="/docs/hahahasansundertale/megalovania?sidebarOpen=true">Meglovania</a></li></ul></li><li open="false">4. <a href="/docs/lmaobro/?sidebarOpen=true">HHAHAHAHAHA DU GAGO</a><ul><li open="nochild">4.1. <a href="/docs/lmaobro/ddd?sidebarOpen=true">OMINOUS DOCUMENT</a></li><li open="nochild">4.2. <a href="/docs/lmaobro/eee?sidebarOpen=true">OMINOUS DOCUMENT</a></li><li open="false">4.3. eeeaa<ul><li open="nochild">4.3.1. <a href="/docs/lmaobro/eeeaa/no?sidebarOpen=true">NO</a></li></ul></li></ul></li></ul></nav><div class="content"> 
-    <h1 id="project-skeleton">
-    Project Skeleton
-    <a class="anchor" href="#project-skeleton">
-        <span class="header-link">#</span>
-    </a>
-    </h1>
+<!--#ff00fe color--></a><p><span>DRKSLV</span>Docs</p><hr/><ul class="root"><li open="true"><b id="currentArticle">1. <a href="/docs/architecture?sidebarOpen=true">Project Skeleton</a></b><ul class="outline"><li open="nochild"><ul><li open="nochild"><a href="?sidebarOpen=false#folder-structure"> Folder Structure</a><ul></ul></li><li open="nochild"><a href="?sidebarOpen=false#markdown-file-specification"> Markdown File Specification</a><ul><li open="nochild"><a href="?sidebarOpen=false#template"> Template</a><ul></ul></li><li open="nochild"><a href="?sidebarOpen=false#markdown-file"> Markdown File</a><ul></ul></li></ul></li><li open="nochild"><a href="?sidebarOpen=false#datatypes"> Datatypes</a><ul><li open="nochild"><a href="?sidebarOpen=false#document-info"> document info</a><ul></ul></li><li open="nochild"><a href="?sidebarOpen=false#article-cache"> article cache</a><ul></ul></li><li open="nochild"><a href="?sidebarOpen=false#author"> author</a><ul></ul></li></ul></li></ul></li></ul></li><li open="nochild">2. <a href="/docs/?sidebarOpen=true">DOCS</a></li><li open="nochild">3. <a href="/docs/todo?sidebarOpen=true">Project TODO</a></li><li open="false">4. hahahasansundertale<ul><li open="nochild">4.1. <a href="/docs/hahahasansundertale/megalovania?sidebarOpen=true">Meglovania</a></li></ul></li><li open="false">5. <a href="/docs/lmaobro/?sidebarOpen=true">HHAHAHAHAHA DU GAGO</a><ul><li open="nochild">5.1. <a href="/docs/lmaobro/ddd?sidebarOpen=true">OMINOUS DOCUMENT</a></li><li open="nochild">5.2. <a href="/docs/lmaobro/eee?sidebarOpen=true">OMINOUS DOCUMENT</a></li><li open="false">5.3. eeeaa<ul><li open="nochild">5.3.1. <a href="/docs/lmaobro/eeeaa/no?sidebarOpen=true">NO</a></li></ul></li></ul></li></ul></nav><div class="content"> <div class="header"><h1 class="title">Project Skeleton</h1><sub class="author">published by <a href="#__about_the_author">Konrad</a></sub></div><div class="article"><head></head><body>
     <h2 id="folder-structure">
     Folder Structure
     <a class="anchor" href="#folder-structure">
@@ -75,6 +69,8 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
 <li>other passed locals:<ul>
 <li><code>url</code>: url this file will have</li>
 <li><code>articles</code>: <a href="#article-cache">article cache</a></li>
+<li><code>author</code>: <a href="#author">author</a></li>
+<li><code>time</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> Object for date defined in header</li>
 <li><code>vars</code>: Custom Object defined via markdown file header</li>
 <li><code>docInfo</code>: <a href="#document-info">DocInfo</a> (obtained by HTML scraper)</li>
 <li>functions <code>isSubpath</code> and <code>getFolder</code> for working with the article cache</li>
@@ -88,17 +84,12 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
         <span class="header-link">#</span>
     </a>
     </h3><ul>
-<li><p>It’s just markdown except:</p>
-</li>
-<li><p>Links may be converted to embeds</p>
-</li>
-<li><p>Anchor tags may be included</p>
-</li>
-<li><p>hopefully custom styles at some point</p>
-</li>
-<li><p>Can include JSON metadata in a md comment on the first line (“Header”)</p>
-<ul>
-<li><pre><code>[//]: # &#39;{&quot;template&quot;: &quot;&quot;}&#39; 
+<li>It’s just markdown except:</li>
+<li>Links may be converted to embeds</li>
+<li>Anchor tags may be included</li>
+<li>hopefully custom styles at some point</li>
+<li>Can include JSON metadata in a md comment on the first line (“Header”)<ul>
+<li><pre><code>[//]: # '{"template": ""}' 
 </code></pre>
 </li>
 <li><code>template</code>: String – specifies the name of the pug template used (or default.pug)</li>
@@ -142,6 +133,8 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
 <li><code>url</code>: Url of this folder</li>
 <li><code>articles</code>: Array of article objects<ul>
 <li><code>url</code>: URl of this article</li>
+<li><code>author</code>: <a href="#author">author</a></li>
+<li><code>time</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> Object for date defined in header</li>
 <li>template, vars, parserOpts</li>
 <li>includes all properties from <a href="#document-info">DocInfo</a></li>
 </ul>
@@ -151,4 +144,22 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
 </ul>
 </li>
 </ul>
-</div></body></html>
+
+    <h3 id="author">
+    author
+    <a class="anchor" href="#author">
+        <span class="header-link">#</span>
+    </a>
+    </h3><ul>
+<li>defined in <code>/src/authors.json</code><ul>
+<li>array of objects outlined below</li>
+</ul>
+</li>
+<li><code>displayName</code> - name that may be displayed by pug file </li>
+<li><code>avatarUrl</code> - should be a url pointing to a (square) image, that may […]</li>
+<li><code>description</code> - description that may […]</li>
+</ul>
+</body></div><div class="aboutAuthor" id="__about_the_author"><h1>About me </h1><div class="cont"> <img src="/assets/avatars/cursedMan.jpg"/><div class="txt"><h2>Konrad</h2><p>Euer charismatischer Gastgeber hier auf Konrad Webseite.
+Ich bin grad wie komisch, oder?
+Idk hab das schleichende gefühl dass ich cringe bin...
+Deswegen hab ich jetzt eine Webseite :)</p></div></div></div></div></body></html>
